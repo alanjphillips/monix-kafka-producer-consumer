@@ -15,7 +15,7 @@ import io.circe.generic.semiauto._
 
 object HelloConsumer extends App {
   implicit val scheduler: Scheduler = monix.execution.Scheduler.global
-  implicit val fooDecoder: Decoder[HelloThere] = deriveDecoder[HelloThere]
+  implicit val helloDecoder: Decoder[HelloThere] = deriveDecoder[HelloThere]
 
   val consumerCfg = KafkaConsumerConfig.default.copy(
     bootstrapServers = List("kafka-1:9092"),

@@ -14,7 +14,6 @@ import io.circe.syntax._
 object HelloProducer extends App {
   implicit val scheduler: Scheduler = monix.execution.Scheduler.global
 
-  // Init
   val producerCfg = KafkaProducerConfig.default.copy(
     bootstrapServers = List("kafka-1:9092")
   )
